@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import jwtauth.service.CustomUserDetailsService;
 
@@ -21,6 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private CustomUserDetailsService  customUserDetailsService;
+	
+	@Autowired
+	private JwtValidate jwtValidate;
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -40,6 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		
+		//let us add a filter before the person tries to access the URL
+		http.addFilterBefore(jwtValidate,UsernamePasswordAuthenticationFilter.class);
 	}
 	
 	@Bean
