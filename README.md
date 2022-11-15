@@ -10,7 +10,7 @@ JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and s
 2. Payload (data)
 3. Signature
 
-This JWT has an advantage over cookie-based and session-based authentication where the token can exist at either on the client-side or the server-side.In JWT standard the token move from client to server and vice-versa. You need to generate a token first and after that while accessing a secure endpoint you will have the send the token in  the header where Authorization will serve as the key. The server will validate your token first and after successful validation you will be getting a response from the server or else an exception will be thrown.
+This JWT has an advantage over cookie-based and session-based authentication where the token can exist at either on the client-side or the server-side.In JWT standard the token can move from client to server and vice-versa. You need to generate a token first and after that while accessing a secure endpoint you will have the send the token in  the header where Authorization will serve as the key. The server will validate your token first and after successful validation you will be getting a response from the server or else an exception will be thrown.
 
 
 **Dependencies**
