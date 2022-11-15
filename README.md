@@ -14,10 +14,10 @@ This JWT has an advantage over cookie-based and session-based authentication whe
 
 
 **Dependencies**
-1.Spring Security
-2.Spring Web
-3.io.jsonwebtoken 
-4.jax-b api
+1. Spring Security
+2. Spring Web
+3. io.jsonwebtoken 
+4. jax-b api
 
 **Generating a Token**
 To generate make a seperate class say JwtUtil and implement all the methods such generateToken and extractUsername and many more. You can get the list of all the methods to be implemented from github.
